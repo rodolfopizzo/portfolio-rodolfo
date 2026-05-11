@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodolfo Pizzo — Portfólio</title>
+
+    <!-- folha de estilo principal -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- fonte do google fonts (so o link, sem framework) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Space+Mono:wght@400;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- cabeçalho com menu fixo no topo (visivel em todas as seções) -->
+    <header class="topo">
+        <div class="logo">R.P.</div>
+
+        <!-- menu de navegação por âncoras -->
+        <nav class="menu" id="menu">
+            <a href="#sobre" class="link-menu">sobre</a>
+            <a href="#formacao" class="link-menu">formação</a>
+            <a href="#portfolio" class="link-menu">portfólio</a>
+            <a href="#contato" class="link-menu">contato</a>
+        </nav>
+
+        <!-- botão pra alternar tema claro/escuro -->
+        <button id="botao-tema" class="botao-tema" aria-label="Alternar tema">
+            <span id="icone-tema">☾</span>
+        </button>
+
+        <!-- botão hamburguer pra mobile -->
+        <button id="botao-hamburguer" class="hamburguer" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+
+        <!-- ============================== -->
+        <!-- SEÇÃO 1: SOBRE MIM             -->
+        <!-- ============================== -->
+        <section id="sobre" class="secao secao-hero">
+            <div class="numero-secao">01 — apresentação</div>
+            <div class="hero-grid">
+                <div>
+                    <h1 class="nome">Rodolfo<br>Pizzo</h1>
+                    <p class="subtitulo">ciência de dados · sertãozinho/sp · 31 anos</p>
+                </div>
+                <div class="frase-lateral">
+                    <p>"gênio é o louco que fez<br>acontecer o impossível."</p>
+                </div>
+            </div>
+
+            <div class="apresentacao">
+                <p>
+                    meu nome é rodolfo, tenho 31 anos e moro em sertãozinho, interior de são paulo.
+                    estou finalizando minha graduação em ciência de dados e meu objetivo é me
+                    tornar especialista na área — quero trabalhar com análise de dados, modelagem
+                    e tudo que envolve transformar número solto em decisão inteligente.
+                </p>
+                <p>
+                    fora do mundo dos dados, sou apaixonado por jogos de lógica. é o tipo de
+                    distração que mantém o cérebro afiado e ainda diverte bastante.
+                </p>
+            </div>
+
+            <!-- tags de habilidades e interesses -->
+            <div class="tags">
+                <span class="tag">python</span>
+                <span class="tag">análise de dados</span>
+                <span class="tag">inglês fluente</span>
+                <span class="tag">design gráfico</span>
+                <span class="tag">jogos de lógica</span>
+            </div>
+        </section>
+
+
+        <!-- ============================== -->
+        <!-- SEÇÃO 2: FORMAÇÃO              -->
+        <!-- ============================== -->
+        <section id="formacao" class="secao">
+            <div class="numero-secao">02 — formação</div>
+            <h2 class="titulo-secao">trajetória</h2>
+
+            <!-- linha do tempo da formação -->
+            <div class="timeline">
+
+                <div class="item-timeline">
+                    <div class="data">2026</div>
+                    <div class="conteudo-timeline">
+                        <h3>graduação em ciência de dados</h3>
+                        <p>previsão de conclusão em 2026. foco em análise estatística,
+                        machine learning, programação em python e visualização de dados.</p>
+                    </div>
+                </div>
+
+                <div class="item-timeline">
+                    <div class="data">—</div>
+                    <div class="conteudo-timeline">
+                        <h3>curso de design gráfico</h3>
+                        <p>formação complementar em design gráfico, com foco em composição visual,
+                        tipografia e identidade visual. ajuda muito na hora de apresentar dados.</p>
+                    </div>
+                </div>
+
+                <div class="item-timeline">
+                    <div class="data">2012</div>
+                    <div class="conteudo-timeline">
+                        <h3>ensino médio — escola albert sabin</h3>
+                        <p>conclusão do ensino médio em 2012.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- bloco de idiomas -->
+            <div class="bloco-idiomas">
+                <h3 class="subtitulo-bloco">idiomas</h3>
+                <div class="idiomas">
+                    <div class="idioma">
+                        <div class="nome-idioma">português</div>
+                        <div class="nivel-idioma">nativo</div>
+                    </div>
+                    <div class="idioma">
+                        <div class="nome-idioma">inglês</div>
+                        <div class="nivel-idioma">fluente</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================== -->
+        <!-- SEÇÃO 3: PORTFÓLIO             -->
+        <!-- ============================== -->
+        <section id="portfolio" class="secao">
+            <div class="numero-secao">03 — portfólio</div>
+            <h2 class="titulo-secao">trabalhos &amp; projetos</h2>
+
+            <p class="descricao-secao">
+                seleção de projetos que mostram um pouco do que ando fazendo na área de
+                dados e desenvolvimento.
+            </p>
+
+            <!-- grid de projetos -->
+            <div class="grid-projetos">
+
+                <article class="card-projeto">
+                    <div class="rotulo-projeto">análise exploratória</div>
+                    <h3>EDA — Airbnb Dataset</h3>
+                    <p>análise exploratória de dados do airbnb. limpeza, tratamento e
+                    visualização para entender padrões de preço, localização e ocupação.</p>
+                    <div class="stack">
+                        <span>python</span>
+                        <span>pandas</span>
+                        <span>jupyter</span>
+                    </div>
+                    <a href="https://github.com/rodolfopizzo/EDA---Airbnb-Dataset" target="_blank" rel="noopener" class="link-projeto">
+                        ver no github →
+                    </a>
+                </article>
+
+                <article class="card-projeto">
+                    <div class="rotulo-projeto">site institucional</div>
+                    <h3>Love Pet 3D</h3>
+                    <p>site institucional do projeto love pet 3d. participação no desenvolvimento
+                    e estruturação da página, com foco em apresentação visual.</p>
+                    <div class="stack">
+                        <span>html</span>
+                        <span>css</span>
+                        <span>design</span>
+                    </div>
+                    <a href="https://lovepet3d.com.br/" target="_blank" rel="noopener" class="link-projeto">
+                        acessar o site →
+                    </a>
+                </article>
+
+                <article class="card-projeto card-projeto--vazio">
+                    <div class="rotulo-projeto">em breve</div>
+                    <h3>novos projetos a caminho</h3>
+                    <p>novos projetos de análise de dados e machine learning serão
+                    publicados em breve no meu github. fique de olho.</p>
+                    <a href="https://github.com/rodolfopizzo" target="_blank" rel="noopener" class="link-projeto">
+                        ver meu github →
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- ============================== -->
+        <!-- SEÇÃO 4: CONTATO               -->
+        <!-- ============================== -->
+        <section id="contato" class="secao">
+            <div class="numero-secao">04 — contato</div>
+            <h2 class="titulo-secao">vamos conversar</h2>
+
+            <div class="contato-grid">
+
+                <!-- coluna da esquerda: infos de contato -->
+                <div class="info-contato">
+                    <p class="descricao-secao">
+                        aberto a oportunidades em ciência de dados, projetos de análise
+                        e conversas sobre tecnologia em geral.
+                    </p>
+
+                    <ul class="lista-contato">
+                        <li>
+                            <span class="rotulo">e-mail</span>
+                            <a href="mailto:rodolfopizzo@gmail.com">rodolfopizzo@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="rotulo">telefone</span>
+                            <span>(16) 00000-0000</span>
+                        </li>
+                        <li>
+                            <span class="rotulo">cidade</span>
+                            <span>sertãozinho, sp</span>
+                        </li>
+                        <li>
+                            <span class="rotulo">github</span>
+                            <a href="https://github.com/rodolfopizzo" target="_blank" rel="noopener">github.com/rodolfopizzo</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- coluna da direita: formulário com validação em JS -->
+                <form id="formulario-contato" class="formulario" novalidate>
+
+                    <div class="campo">
+                        <label for="nome">nome</label>
+                        <input type="text" id="nome" name="nome" autocomplete="name">
+                        <span class="erro" id="erro-nome"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">e-mail</label>
+                        <input type="email" id="email" name="email" autocomplete="email">
+                        <span class="erro" id="erro-email"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensagem">mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+                        <span class="erro" id="erro-mensagem"></span>
+                    </div>
+
+                    <button type="submit" class="botao-enviar">enviar mensagem</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- modal de confirmação do envio -->
+    <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-conteudo">
+            <div class="modal-icone">✓</div>
+            <h3>mensagem enviada!</h3>
+            <p>recebi sua mensagem e vou responder o quanto antes. obrigado pelo contato.</p>
+            <button id="fechar-modal" class="botao-enviar">fechar</button>
+        </div>
+    </div>
+
+    <!-- rodapé -->
+    <footer class="rodape">
+        <div>© 2026 rodolfo pizzo · feito à mão com html, css e javascript</div>
+    </footer>
+
+    <!-- script principal -->
+    <script src="js/script.js"></script>
+</body>
+</html>
