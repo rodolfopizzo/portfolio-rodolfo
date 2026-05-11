@@ -1,0 +1,712 @@
+/* ========================================
+   PORTFOLIO RODOLFO PIZZO
+   estilos personalizados — sem frameworks
+   ======================================== */
+
+/* reset basico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* variaveis de cor pro tema escuro (padrão) */
+:root {
+    --fundo: #0e0820;
+    --fundo-2: #1a1233;
+    --fundo-3: #241846;
+    --texto: #e8e3ff;
+    --texto-2: #b8a7ff;
+    --texto-3: #d4c9ff;
+    --roxo: #8b6dff;
+    --roxo-escuro: #5e4ba0;
+    --borda: #3a2d6b;
+    --erro: #ff7a90;
+    --sucesso: #7affb9;
+}
+
+/* variaveis pro tema claro */
+body.tema-claro {
+    --fundo: #f5f2ff;
+    --fundo-2: #ffffff;
+    --fundo-3: #ebe5ff;
+    --texto: #1a1233;
+    --texto-2: #5e4ba0;
+    --texto-3: #3a2d6b;
+    --roxo: #5e3fc7;
+    --roxo-escuro: #3a2475;
+    --borda: #cebcff;
+}
+
+/* corpo da pagina */
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.7;
+    font-weight: 300;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+/* rolagem suave ao clicar nos links âncora */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================
+   CABEÇALHO E MENU FIXO
+   ======================================== */
+.topo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: rgba(14, 8, 32, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--borda);
+}
+
+body.tema-claro .topo {
+    background-color: rgba(245, 242, 255, 0.85);
+}
+
+.logo {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: var(--roxo);
+    font-weight: 700;
+}
+
+.menu {
+    display: flex;
+    gap: 28px;
+}
+
+.link-menu {
+    color: var(--texto-3);
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.2s ease;
+}
+
+/* linha embaixo do link no hover */
+.link-menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--roxo);
+    transition: width 0.3s ease;
+}
+
+.link-menu:hover {
+    color: var(--texto);
+}
+
+.link-menu:hover::after {
+    width: 100%;
+}
+
+/* botão do tema */
+.botao-tema {
+    background: transparent;
+    border: 1px solid var(--borda);
+    color: var(--texto);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.botao-tema:hover {
+    background-color: var(--fundo-3);
+    border-color: var(--roxo);
+}
+
+/* hamburguer (so aparece no mobile) */
+.hamburguer {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px;
+}
+
+.hamburguer span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--texto);
+    transition: all 0.3s ease;
+}
+
+/* ========================================
+   SEÇÕES GERAIS
+   ======================================== */
+.secao {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 120px 40px 60px;
+    min-height: 100vh;
+}
+
+.numero-secao {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--roxo);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.titulo-secao {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 500;
+    color: var(--texto);
+    line-height: 1;
+    margin-bottom: 40px;
+}
+
+.descricao-secao {
+    font-size: 16px;
+    color: var(--texto-3);
+    max-width: 600px;
+    margin-bottom: 48px;
+    line-height: 1.8;
+}
+
+/* ========================================
+   SEÇÃO HERO (SOBRE)
+   ======================================== */
+.secao-hero {
+    padding-top: 160px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 60px;
+}
+
+.nome {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 110px;
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -2px;
+    color: var(--texto);
+    margin-bottom: 16px;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: var(--texto-2);
+    letter-spacing: 1px;
+}
+
+.frase-lateral {
+    border-left: 1px solid var(--borda);
+    padding-left: 28px;
+    font-style: italic;
+    color: var(--texto-3);
+    font-size: 17px;
+    line-height: 1.6;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.apresentacao {
+    max-width: 720px;
+    margin-bottom: 40px;
+}
+
+.apresentacao p {
+    margin-bottom: 18px;
+    color: var(--texto-3);
+    font-size: 16px;
+}
+
+/* tags de habilidades */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    padding: 6px 14px;
+    background-color: var(--fundo-2);
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    color: var(--texto-3);
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    border-color: var(--roxo);
+    color: var(--texto);
+}
+
+/* ========================================
+   SEÇÃO FORMAÇÃO — TIMELINE
+   ======================================== */
+.timeline {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.item-timeline {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 40px;
+    padding: 28px 0;
+    border-top: 1px solid var(--borda);
+}
+
+.item-timeline:last-child {
+    border-bottom: 1px solid var(--borda);
+}
+
+.data {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    color: var(--roxo);
+    padding-top: 4px;
+}
+
+.conteudo-timeline h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--texto);
+}
+
+.conteudo-timeline p {
+    color: var(--texto-3);
+    font-size: 15px;
+    max-width: 600px;
+}
+
+/* bloco de idiomas */
+.bloco-idiomas {
+    margin-top: 40px;
+}
+
+.subtitulo-bloco {
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--roxo);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.idiomas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.idioma {
+    padding: 20px;
+    background-color: var(--fundo-2);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+.nome-idioma {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--texto);
+    margin-bottom: 4px;
+}
+
+.nivel-idioma {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--roxo);
+    text-transform: uppercase;
+}
+
+/* ========================================
+   SEÇÃO PORTFÓLIO — CARDS
+   ======================================== */
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.card-projeto {
+    background-color: var(--fundo-2);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.card-projeto:hover {
+    border-color: var(--roxo);
+    transform: translateY(-4px);
+}
+
+.rotulo-projeto {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--roxo);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.card-projeto h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    color: var(--texto);
+    line-height: 1.1;
+}
+
+.card-projeto p {
+    color: var(--texto-3);
+    font-size: 14px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* lista de tecnologias dentro do card */
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.stack span {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    padding: 3px 8px;
+    background-color: var(--fundo-3);
+    border-radius: 4px;
+    color: var(--texto-2);
+}
+
+.link-projeto {
+    color: var(--roxo);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: gap 0.2s ease;
+    margin-top: auto;
+}
+
+.link-projeto:hover {
+    color: var(--texto);
+}
+
+/* card "em breve" tem visual diferente */
+.card-projeto--vazio {
+    border-style: dashed;
+    background-color: transparent;
+}
+
+/* ========================================
+   SEÇÃO CONTATO
+   ======================================== */
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+}
+
+.lista-contato {
+    list-style: none;
+}
+
+.lista-contato li {
+    padding: 16px 0;
+    border-top: 1px solid var(--borda);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.lista-contato li:last-child {
+    border-bottom: 1px solid var(--borda);
+}
+
+.rotulo {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--roxo);
+    text-transform: uppercase;
+}
+
+.lista-contato a {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.lista-contato a:hover {
+    color: var(--roxo);
+}
+
+/* formulario */
+.formulario {
+    background-color: var(--fundo-2);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--roxo);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    background-color: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--texto);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--roxo);
+}
+
+/* campo com erro fica com borda vermelha */
+.campo input.com-erro,
+.campo textarea.com-erro {
+    border-color: var(--erro);
+}
+
+.erro {
+    display: block;
+    color: var(--erro);
+    font-size: 12px;
+    margin-top: 6px;
+    min-height: 16px;
+    font-family: 'Space Mono', monospace;
+}
+
+.botao-enviar {
+    background-color: var(--roxo);
+    color: #ffffff;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.botao-enviar:hover {
+    background-color: var(--roxo-escuro);
+}
+
+/* ========================================
+   MODAL DE CONFIRMAÇÃO
+   ======================================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.aberto {
+    display: flex;
+}
+
+.modal-conteudo {
+    background-color: var(--fundo-2);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+}
+
+.modal-icone {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--roxo);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 20px;
+}
+
+.modal-conteudo h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: var(--texto);
+}
+
+.modal-conteudo p {
+    color: var(--texto-3);
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+/* ========================================
+   RODAPÉ
+   ======================================== */
+.rodape {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid var(--borda);
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--texto-2);
+    letter-spacing: 1px;
+    margin-top: 60px;
+}
+
+/* ========================================
+   RESPONSIVO — TABLET E MOBILE
+   ======================================== */
+@media (max-width: 900px) {
+    .nome {
+        font-size: 72px;
+    }
+
+    .titulo-secao {
+        font-size: 42px;
+    }
+
+    .hero-grid,
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .frase-lateral {
+        border-left: none;
+        border-top: 1px solid var(--borda);
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .topo {
+        padding: 14px 20px;
+    }
+
+    /* no mobile, esconde o menu e mostra o hamburguer */
+    .menu {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        background-color: var(--fundo-2);
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+        width: 200px;
+        border-left: 1px solid var(--borda);
+        border-bottom: 1px solid var(--borda);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .menu.aberto {
+        transform: translateX(0);
+    }
+
+    .menu .link-menu {
+        padding: 12px 24px;
+    }
+
+    .hamburguer {
+        display: flex;
+    }
+
+    .secao {
+        padding: 100px 20px 40px;
+    }
+
+    .nome {
+        font-size: 56px;
+    }
+
+    .titulo-secao {
+        font-size: 34px;
+    }
+
+    .item-timeline {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .card-projeto {
+        padding: 24px;
+    }
+
+    .formulario {
+        padding: 24px;
+    }
+}
